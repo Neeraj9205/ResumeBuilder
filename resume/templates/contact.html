@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>home</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}"><span class="text-warning">Resume</span>Builder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          
+          
+          
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+<div class="container">
+    <form method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name :-</label>
+            <input type="text" class="form-control" id="exampleInputname" aria-describedby="emailHelp" required="fill"
+              placeholder="Enter the Name" name="name">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address :-</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              required="fill" name="email">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone :-</label>
+            <input type="text" class="form-control" id="exampleInputphone" aria-describedby="emailHelp" required="fill"
+              name="phone">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Message :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp" required="fill"
+              name="message"></textarea>
+
+          </div>
+          <fieldset>
+            <button type="submit" id="form-submit" class="main-button ">Send Message Now</button>
+          </fieldset>
+        </div>
+        <div class="col-sm-7">
+          <br>
+          <div class="card" style="width: 90 rem;">
+            <div class="card-body">
+              <h5 class="card-title">Resume Builder</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Make a your choice </h6>
+              <p class="card-text">Resume Builder is the best software to build you a CV/Resume. It allows you
+                to put in all of your work experience, education, and skills, as well as extra bits of
+                relevant information such as hobbies and interests. After you have finished building your
+                resume, you can print it out in an attractive format suitable for hard copies or digital
+                applications.</p>
+              <a href="{% url 'login' %}" class="btn btn-success"> Click Here To craete A Resume</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- form-group// -->
+    </form>
+</div>
+<br><br>
+</body>
+
+</html>
+{% include 'includes/footer.html' %}

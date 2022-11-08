@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h2 align="center" class="primary">Resume</h2>
+    <h2>{{user_profile.name}}</h2>
+    <h2>Email: {{user_profile.email}}</h2>
+    <h2>Phone: {{user_profile.phone}}</h2>
+    <h3>Address: {{user_profile.address}}</h3>
+    <hr>
+    <h2>Summery</h2>
+    <p><strong>{{user_profile.summery}}</strong></p>
+    <hr>
+    <h2>Academics</h2>
+    <ul>
+        <li>{{user_profile.highschool}}</li>
+        <li>{{user_profile.seniorschool}}</li>
+        <li>{{user_profile.degree}}</li>
+        <li>{{user_profile.university}}</li>
+    </ul>
+    <hr>
+    <h2>Previous work exoerience:</h2> <h6>{{user_profile.previous_work}}</h6>
+    <hr>
+   
+    <h2>Skills:</h2><ul><li>{{user_profile.skills}}</li></ul>
+       
+    <h2>Father name:{{user_profile.fathername}}</h2> 
+    <h2>Gender:{{user_profile.gender}}</h2>
+    <h2>Marital Status:{{user_profile.marital_status}}</h2>
+    <h2>Language:{{user_profile.language}}</h2>
+    <h2>Nationality:{{user_profile.nationality}}</h2>
+    </div>
+</body>
+
+</html>
+{% include 'includes/footer.html' %}

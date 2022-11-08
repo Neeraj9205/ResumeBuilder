@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>home</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}"><span class="text-warning">Resume</span>Builder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'listuser' %}">Listuser</a>
+          </li>
+          <button class="btn btn-warning" type="submit"><a href="{% url 'logout' %}">logout</a></button>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+  <h1>Welcome to Resume Builder Page</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name :-</label>
+            <input type="text" class="form-control" id="exampleInputname" aria-describedby="emailHelp" required="fill"
+              placeholder="Enter the Name" name="name">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address :-</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              required="fill" name="email">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone :-</label>
+            <input type="text" class="form-control" id="exampleInputphone" aria-describedby="emailHelp" required="fill"
+              name="phone">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Date_Of _Birth :-</label>
+            <input type="calendar" class="form-control" id="exampleInputphone" aria-describedby="emailHelp" required="fill"
+            placeholder="YYYY-MM-DD" name="date_of_birth">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Address :-</label>
+            <input type="text" class="form-control" id="exampleInputaddress" aria-describedby="emailHelp"
+              required="fill" name="address">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Summary :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp" required="fill"
+              name="summary"></textarea>
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">HighSchool :-</label>
+            <input type="text" class="form-control" id="exampleInputhighschool" aria-describedby="emailHelp"
+              required="fill" name="highschool">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">SeniorSchool :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="seniorschool">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Degree :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="degree">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">University :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp"
+              name="university"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Previouswork :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp"
+              name="previouswork"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Skills :-</label>
+            <textarea class="form-control" id="exampleInputSummary" aria-describedby="emailHelp"
+              name="skills"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">FatherName :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="fathername">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Gender :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="gender">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">MaritalStatus :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="MaritalStatus">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Language :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="language">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Nationality :-</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" required="fill" name="nationality">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+</body>
+
+</html>
+{% include 'includes/footer.html' %}
